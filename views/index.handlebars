@@ -1,7 +1,45 @@
-<ul><h1>MENU</h1>
-{{#each burgers}}
-<li>{{burger_name}}<button id={{id}}>Devour it!</button></li>
-{{/each}}
-</ul>
-<ul><h1>Devoured!</h1>
-</ul>
+<body>
+
+    <div class="container">
+        <div class="row d-flex text-center">
+            <h1 class='mx-auto'>EAT DA BURGER</h1>
+             </div>
+        <div class="row"><img src="/assets/img/index.png" class="mx-auto"></div>
+         <div class="row d-flex flex-content-center">
+            <form class='mx-auto'>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Add a Burger!</label>
+    <input class="burgerForm">
+    <button type="button" class="btn btn-dark addBurger">Add Burger</button>
+    <small id="emailHelp" class="form-text text-muted">You know you want to.</small>
+    
+  </div>
+  </form>
+        </div>
+        <div class="row">
+            <div class="col-6 text-center">
+                <ul>Not Devoured</ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                {{else}}
+                <li>{{burger_name}}<button type='button' class='devour btn btn-dark' id={{id}}>Devour it!</button></li>
+                {{/if}}
+                {{/each}}
+            </div>
+            <div class="col-6 text-center">
+                <ul>Devoured</ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                <li>{{burger_name}}</li>
+                {{/if}}
+                {{/each}}
+            </div>
+
+        </div>
+       
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</body>
